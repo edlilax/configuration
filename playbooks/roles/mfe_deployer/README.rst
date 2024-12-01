@@ -120,7 +120,7 @@ _________________
 
 The deployment of the MFEs to the appservers will not be enough to have them working properly. Most of them require communication with the LMS, so it is necessary to configure the LMS to accept communication from the MFEs.
 
-The principal configurations that are needed in ansible are: ``EDXAPP_CORS_ORIGIN_WHITELIST``, ``EDXAPP_CSRF_TRUSTED_ORIGINS``, ``EDXAPP_LOGIN_REDIRECT_WHITELIST``. 
+The principal configurations that are needed in ansible are: ``EDXAPP_CORS_ORIGIN_WHITELIST``, ``EDXAPP_CSRF_TRUSTED_ORIGINS``, ``EDXAPP_LOGIN_REDIRECT_WHITELIST``.
 They should contain the domain of the MFEs so that the LMS accepts their requests.
 
 It is also necessary to enable the features ENABLE_CORS_HEADERS and ENABLE_CROSS_DOMAIN_CSRF_COOKIE. They can be enabled in Koa with ``EDXAPP_ENABLE_CORS_HEADERS``, ``EDXAPP_ENABLE_CROSS_DOMAIN_CSRF_COOKIE``.
@@ -157,7 +157,7 @@ __________________________________________________________
 
   MFE_DEPLOY_STANDALONE_NGINX: false
   MFE_DEPLOY_COMMON_HOSTNAME: '{{ MFE_BASE }}'
-  
+
   ## edxapp Configurations
 
   EDXAPP_SESSION_COOKIE_DOMAIN: ".{{ EDXAPP_LMS_BASE }}"
@@ -201,4 +201,4 @@ __________________________________________________________
 
 .. _decision record about asymmetric JWT: https://github.com/edx/edx-platform/blob/master/openedx/core/djangoapps/oauth_dispatch/docs/decisions/0008-use-asymmetric-jwts.rst
 .. _Developer Documentation: https://edx.readthedocs.io/projects/edx-developer-docs/en/latest/developers_guide/micro_frontends_in_open_edx.html#overriding-brand-specific-elements
-.. _MFE_ENVIRONMENT_DEFAULT: https://github.com/edx/configuration/blob/master/playbooks/roles/mfe/defaults/main.yml#L95
+.. _MFE_ENVIRONMENT_DEFAULT: https://github.com/edlilax/configuration/blob/master/playbooks/roles/mfe/defaults/main.yml#L95
